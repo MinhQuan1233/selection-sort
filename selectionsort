@@ -1,0 +1,49 @@
+#include<stdio.h>
+
+void nhap(int a[], int n)
+{
+	for(int i = 0; i < n; i++)
+	{
+		printf("\nNhap a[%d]", i);
+		scanf("%d", &a[i]);
+		
+	}
+}
+
+void xuat(int a[], int n)
+{
+	for(int i = 0; i < n; i++)
+	{
+		printf("%d", a[i]);
+	}
+}
+void selectionsort(int a[], int n)
+{
+	for(int i = 0; i < n - 1; i++)
+	{
+		int min =i;
+		for(int j = i + 1; j < n; j++)
+		{
+			/* code */if (a[j] < a[min])
+			{
+				/* code */min = j;
+			}
+			
+		}
+      int x = a[i];
+	  a[i] = a[min];
+	  a[min] = x;		
+	}
+}
+
+int main()
+{
+	int a[100];
+	int n;
+	printf("\nNhap so phan tu: ");
+	scanf("%d", &n);
+	nhap(a, n);
+	printf("\nMang sau khi sap xep la: ");
+    xuat(a, n);
+	selectionsort(a, n);
+}
